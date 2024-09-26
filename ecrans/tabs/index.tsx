@@ -3,6 +3,9 @@ import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '../Home';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+import LinearGradient from 'react-native-linear-gradient';
+import Message from '../Message';
+import Parametre from '../Parametre';
 
 
 
@@ -11,15 +14,15 @@ const BottomTabs = () => {
     return (
         <Tab.Navigator
           initialRouteName="Home"
-          screenOptions={{
-            tabBarColor: '#e91e63',
-          }}
+      activeColor="#850606"  // Couleur active
+      inactiveColor="#000000"  // Couleur inactive
+      barStyle={{ backgroundColor: '#ffffff' }}  // Couleur de la barre inférieure
         >
           <Tab.Screen
-            name="Feed"
+            name="Profil"
             component={Home}
             options={{
-              tabBarLabel: 'Home',
+              tabBarLabel: 'Profil',
               tabBarIcon: ({ color }) => (
                 <MaterialCommunityIcons name="home" color={color} size={26} />
               ),
@@ -27,7 +30,7 @@ const BottomTabs = () => {
           />
           <Tab.Screen
             name="Message"
-            component={Home}
+            component={Message}
             options={{
               tabBarLabel: 'Message',
               tabBarIcon: ({ color }) => (
@@ -38,7 +41,7 @@ const BottomTabs = () => {
           />
           <Tab.Screen
             name="Parametre"
-            component={Home}
+            component={Parametre}
             options={{
               tabBarLabel: 'Parametre',
               tabBarIcon: ({ color }) => (
@@ -50,4 +53,4 @@ const BottomTabs = () => {
       );
 }
 
-export default BottomTabs
+export default BottomTabs;
