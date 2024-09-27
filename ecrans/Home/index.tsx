@@ -3,6 +3,10 @@ import React from 'react'
 import dashboardStyles from './style';
 import { fakeActivity } from '../../fakeData/fakeActivity';
 import { Item } from 'react-native-paper/lib/typescript/components/Drawer/Drawer';
+import ActivityItems from '../../composantes/ActivityItems';
+import { fakeSynthomes } from '../../fakeData/fakeSynthome';
+import Synthomes from '../../composantes/SynthomeItems';
+import { fakeDoctor } from '../../fakeData/fakeDoctor';
 
 const Home = () => {
   return (
@@ -27,14 +31,63 @@ const Home = () => {
         style={dashboardStyles.scrollableList}
         renderItem={({item}) => {
           return(
-            <TouchableOpacity style={dashboardStyles.scrollableListItem}>
-            <Text style={dashboardStyles.mainText}>{item.mainText}</Text>
-            <Text style={dashboardStyles.subText}>{item.subText}</Text>
-          </TouchableOpacity>
+            <ActivityItems item={item}/>
           );
         }}
         />
       {/*Fin de Liste des Activités*/}
+
+      
+      {/*Liste des Synthomes*/}
+      <View style={dashboardStyles.title}>
+        <Text style={dashboardStyles.titleBold} >Quel symthöme avez-vous?</Text>
+      </View>
+      <FlatList 
+        data={fakeSynthomes}
+        keyExtractor={item => item.id}
+        horizontal={true}
+        showsHorizontalScrollIndicator= {false}
+        style={dashboardStyles.scrollableList}
+        renderItem={({item}) => {
+          return(
+            <Synthomes item={item}/>
+          );
+        }}
+        />
+
+        
+      {/*Fin de Liste des Synthomes*/}
+
+      
+      {/*Docteur List*/}
+      
+        <View style={dashboardStyles.title_space_between}>
+          <Text style={dashboardStyles.titleBold} >Nos Docteurs</Text>
+          <TouchableOpacity>
+            <Text style={dashboardStyles.link}>Afficher tout...</Text>
+        
+      </TouchableOpacity>
+        </View>
+        <View style={dashboardStyles.DoctorContainer}>
+        {
+          fakeDoctor.splice(0, 5).map((doctor, index) =>{
+            return(
+              <TouchableOpacity 
+              key={doctor.id} 
+              style={dashboardStyles.DoctorCard}>
+                <Image 
+                source={{uri: `${doctor.img}`}}
+                style={dashboardStyles.DoctorImg}/>
+                <View style={dashboardStyles.DoctorInfos}>
+                <Text style={dashboardStyles.DoctorFullName}>{doctor.fullName}</Text>
+                <Text style={dashboardStyles.DoctorSpeciality}>{doctor.speciality}</Text>
+                </View>
+              </TouchableOpacity>
+            )
+          })
+        }
+
+        </View>
     </ScrollView>
   )
 }

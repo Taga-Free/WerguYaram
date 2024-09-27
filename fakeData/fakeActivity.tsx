@@ -21,7 +21,7 @@ export const fakeActivity = [
     },
     {
         id: 5,
-        mainText: 'Pharmacie en garde',
+        mainText: 'Pharmacie de garde',
         subText:'Votre docteur vous surveille ...',
     },
 ]
