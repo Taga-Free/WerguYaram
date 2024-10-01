@@ -4,7 +4,7 @@ import { fakeChats } from '../../fakeData/fakeChats'
 import MessageList from '../../composantes/MessageList'
 import styles from './style'
 
-const Message = () => {
+const Message = ({navigation}) => {
   return (
     <FlatList 
     data={fakeChats}
@@ -12,7 +12,7 @@ const Message = () => {
     style={styles.root}
     renderItem={({item}) =>{
       return (
-      <MessageList item={item}/>)
+      <MessageList item={item} navigation={navigation} />)
     }}
     
     />

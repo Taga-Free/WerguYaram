@@ -1,3 +1,5 @@
+import { Colors } from "react-native/Libraries/NewAppScreen";
+
 export const COLORS = {
     main: '#850606',
     grey: '#f4f6fa',

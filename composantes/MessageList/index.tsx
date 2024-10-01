@@ -8,9 +8,9 @@ const truncateMessage = (last_message, limit) => {
   return last_message.length > limit ? last_message.substring(0, limit) + "..." : last_message;
 };
 
-const MessageList = ({item}) => {
+const MessageList = ({item, navigation }) => {
   return (
-    <TouchableOpacity style={styles.messagesContainer}>
+    <TouchableOpacity style={styles.messagesContainer} onPress={()=> navigation.navigate('MessageDetails', {item})} >
 
       <View style={styles.topContainer}>
             <View style={styles.imageContainer}>
@@ -18,7 +18,7 @@ const MessageList = ({item}) => {
             </View>
             <View style={styles.messagesInfo}>
                 <Text style={styles.fullname}>{item.fullname}</Text>
-                <Text style={styles.last_message}>{truncateMessage(item.last_message, 30)}
+                <Text style={styles.last_message}>{truncateMessage(item.last_message, 25)}
                 </Text>
             </View>
             <View style={styles.rightContainer}>

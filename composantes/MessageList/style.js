@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     },
     messagesInfo: {
         flexDirection: 'column',
-        marginLeft: 15,
+        marginLeft: 10,
     },
 
     fullname: {
@@ -57,7 +57,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flex: 1,
         justifyContent: 'flex-end',
-        alignItems: 'center',
     }
 
 })
