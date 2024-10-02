@@ -2,25 +2,25 @@ import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
     container: {
-        padding: 5,
         flexDirection: 'row',
-        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 10,
     },
-
     input: {
         flex: 1,
-        backgroundColor: 'white',
-        marginLeft: 5,
-
+        height: 40,
+        borderColor: '#ccc',
+        borderWidth: 1,
+        borderRadius: 20,
+        paddingHorizontal: 15,
+        backgroundColor: '#fff',
     },
-
     send: {
-        backgroundColor: '#850606',
-        color: 'white',
-        padding: 15,
-        borderRadius: 50,
-
-    }
+        marginLeft: 10,
+        backgroundColor: '#d32f2f',
+        borderRadius: 30,
+        padding: 10,
+    },
 })
 
 export default styles;
