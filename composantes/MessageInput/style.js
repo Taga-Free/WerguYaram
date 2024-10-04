@@ -21,6 +21,12 @@ const styles = StyleSheet.create({
         borderRadius: 30,
         padding: 10,
     },
+    playButton: {
+        backgroundColor: '#2196F3',
+        borderRadius: 50,
+        padding: 15,
+        margin: 10,
+    },
 })
 
 export default styles;

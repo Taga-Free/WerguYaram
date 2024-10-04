@@ -17,8 +17,12 @@ const Message = ({item}) => {
         alignSelf: isMine() ? 'flex-end' : 'flex-start',}, 
         
     ]}>
-      <Text>{item.message}</Text>
-      <Text>{dayjs(item.createAt).fromNow(true)}</Text>
+      <Text style={{
+          color: isMine() ? 'white' : 'black',
+      }}>{item.message}</Text>
+      <Text style={{
+          color: isMine() ? 'white' : 'black',
+      }}>{dayjs(item.createAt).fromNow(true)}</Text>
     </View>
   )
 }
